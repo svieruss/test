@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node src",
-     "test":"jest src/app.test.js"
+    "test": "jest src/app.test.js",
+    "start": "node src"
   },
   "author": "",
   "license": "ISC",
