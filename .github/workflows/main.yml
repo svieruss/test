@@ -4,13 +4,13 @@ on:
     branches: 
       - main
       - production
-    pull_request:
+  pull_request:
       branches:
         - main
         - production
-    workflow_dispatch:
-  jobs:
-    build:
+  workflow_dispatch:
+jobs:
+  build:
       runs-on: ubuntu-lastest
       
       steps:
