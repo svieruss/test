@@ -27,3 +27,4 @@ jobs:
         
       - name: Uruchomienie testów
         run: npm test
+        
