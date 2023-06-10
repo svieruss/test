@@ -28,22 +28,22 @@ jobs:
       - name: Uruchomienie testów
         run: npm test
         
-        deploy:
-      runs-on: ubuntu-latest
-      needs: [build]
-      steps: 
-        - name: check-out
-          uses: actions/checkout@v2
-        - name: app service
-          uses: azure/appservice-build@v3
-          with:
-            platform: nodejs
-            platform-version: 14.21.3
+  deploy:
+     runs-on: ubuntu-latest 
+     needs: [build]
+     steps: 
+      - name: check-out
+        uses: actions/checkout@v2
+      - name: app service
+        uses: azure/appservice-build@v3
+        with:
+          platform: nodejs
+          platform-version: 14.21.3
 #             source-directory: <SOURCE_DIR>
-#             output-directory: <OUTPUT_DIR>    
-        - name: Deploying web app to Azure
-          uses: azure/webapps-deploy@v1
-          with:
-            app-name: mateusz2
-            publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
+#             output-directory: <OUTPUT_DIR>   
+      - name: Deploying web app to Azure
+        uses: azure/webapps-deploy@v1
+        with:
+          app-name: mateusz2
+          publish-profile: ${{ secrets.AZURE_WEB_APP_PUBLISH_PROFILE }}
         
